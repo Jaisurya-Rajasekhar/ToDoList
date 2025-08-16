@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+</head>
+<body>
+    <h2>Todo List</h2>
+    <ul id="todo-List">
+
+    </ul>
+    <div>
+    <input type="text" id="addTask" placeholder="Add a new task">
+    <button id="submit">Add Task</button>
+    <h2>Completed</h2>
+    <ul id="done-List"></ul>
+    </div>
+</body>
+<script>
+    let submit=document.getElementById('submit');
+    let addTask=document.getElementById('addTask');
+    let ul=document.getElementById('todo-List');
+    let doneList=document.getElementById('done-List');
+
+    let list = new Array();
+ 
+    submit.addEventListener('click',(event)=>{
+        if(addTask.value!=''){
+            list.push(addTask.value);
+            ul.innerHTML +='<li id="'+(list.length-1)+'"><button onClick="complete(list.length-1)">'+addTask.value+'</button></li>';
+            addTask.value = '';
+        }
+            
+
+    });
+
+    function complete(id){
+        doneList.innerHTML += '<li>'+list[id]+'</li>';
+        list.splice(id, 1);
+        document.getElementById(id).remove();
+
+
+    }
+    let button=document.getElementById()
+
+    submit.addEventListener
+
+</script>
+</html>
